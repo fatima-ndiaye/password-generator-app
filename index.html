@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="security.png">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
+        <title>Enigma</title>
+    </head>
+    <body>
+        <header class="header">
+            <p class="uppercase">Enigma</p>
+        </header>
+        <main class="main container flow">
+            <h1 class="fs-h2">Generate a <span class="text-accent fw-bold">random password</span></h1>
+            <p class="fs-body letter-spacing-1 ff-secondary fw-light">Never use an insecure password again</p>
+            <div class="password-length-container">
+                <label for="range" class="password-length">Password Length:</label>
+                <input id="range" type="range" min="5" max="20" value="10" step="1" >
+                <span id="range-value">0</span> </input>
+            </div>
+            <button class="btn text-white bg-accent fs-body" id="btn-generate">Generate password</button>
+            <div class="passwords flex">
+                <div class="text-accent fs-body" id="password-one"></div>
+                <div class="text-accent fs-body" id="password-two"></div>
+
+            </div>
+
+        </main>
+       
+
+        <script src="index.js" type="module"></script>
+    </body>
+
+</html>

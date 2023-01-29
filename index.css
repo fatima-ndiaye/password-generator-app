@@ -1,0 +1,309 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+@font-face 
+{
+    font-family: 'montserrat_light_alt1light';
+    src: url(./fonts/montserrat-light-alt1-webfont.woff2) format('woff2'),
+        url(./fonts/montserrat-light-alt1-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+:root 
+{
+    /* Colors */
+    --clr-dark:270 20% 2%;
+    --clr-light:228 5% 37%; 
+    --clr-white: 100 100% 100%;
+    --clr-accent:213 79% 62%; 
+    /* Font sizes */
+    --fs-h1:2.25rem;
+    --fs-h2:1.75rem;
+    --fs-h3:1.25rem;
+    --fs-body:1rem;
+    /* Font weights */
+    --fw-light:200;
+    --fw-reg:400;
+    --fw-bold:600;
+    /* Font families */
+    --ff-primary:'montserrat_light_alt1light';
+    --ff-secondary:'Poppins', sans-serif;
+}
+@media (min-width:35em) 
+{
+    :root
+    {
+        --fs-h1:2.75rem;
+        --fs-h2:2.25rem;
+        --fs-h3:1.5rem;
+        --fs-body:1.25rem;
+    }
+    
+}
+@media (min-width:45em) 
+{
+    :root
+    {
+        --fs-h1:3.5rem;
+        --fs-h2:3.5rem;
+        --fs-h3:1.75rem;
+        --fs-body:1.25rem;
+    }
+}
+/*-----------------*/
+/* Reset           */
+/*-----------------*/
+*,
+*::before,
+*::after
+{
+    box-sizing: border-box;
+}
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture
+{
+    margin: 0;
+}
+/* set up the body */
+body
+{
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    color: hsl( var(--clr-white) );
+    background-color: hsl( var(--clr-dark) );
+    line-height: 1.5;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* make images easier to work with */
+img,
+picture
+{
+    max-width: 100%;
+    display: block;
+}
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select
+{
+    font: inherit;
+}
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after{
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+/* general */
+.flex
+{
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+.grid
+{
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+.d-block 
+{
+    display: block;
+}
+.flow > * + * /*---*+*==*:not(:first-child)---*/
+{
+    margin-top: var(--flow-space, 1rem);
+}
+.flow--space-small
+{
+    --flow-space: .75rem;
+}
+.container
+{
+    padding-inline: 2em;
+    margin-inline: auto;
+    max-width: 60rem;
+}
+.sr-only
+{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    /* added line */
+    border: 0;
+}
+
+
+.bg-dark{ background-color: hsl( var(--clr-dark) );}
+.bg-light{background-color: hsl(var(--clr-light));}
+.bg-white{background-color: hsl(var(--clr-white));}
+.bg-accent{background-color: hsl(var(--clr-accent));}
+
+.text-dark{color: hsl(var(--clr-dark));}
+.text-light{color: hsl(var(--clr-light));}
+.text-white{color: hsl(var(--clr-white));}
+.text-accent{color: hsl(var(--clr-accent));}
+
+/* typography */
+
+.ff-primary { font-family: var(--ff-primary); }
+.ff-secondary { font-family: var(--ff-secondary); }
+
+.letter-spacing-1 { letter-spacing: 3px; }
+.letter-spacing-2 { letter-spacing: 1px; }
+
+
+.uppercase { text-transform: uppercase; }
+
+.fs-h1 { font-size: var(--fs-h1); }
+.fs-h2 { font-size: var(--fs-h2); }
+.fs-h3 { font-size: var(--fs-h3); }
+.fs-body { font-size: var(--fs-body); }
+
+.fw-light {font-weight: var(--fw-light);}
+.fw-reg {font-weight: var(--fw-reg);}
+.fw-bold {font-weight: var(--fw-bold);}
+
+.fs-h1,
+.fs-h2,
+.fs-h3
+{
+    line-height: 1.1;
+}
+/* ------------------- */
+/* Components          */
+/* ------------------- */
+.btn 
+{
+    border: none;
+    cursor: pointer;
+    padding-top: .525em;
+    padding-bottom: .525em;
+    padding-inline: 1em;
+    cursor: pointer;
+    border-radius: 7px;
+    margin-bottom: 2rem;
+}
+
+/* Header */
+.header 
+{
+     margin: 2.5rem clamp(1rem, 5vw, 3.5rem);
+}
+/* Main */
+.passwords
+{
+    border-top: 1px solid hsl(var(--clr-light));
+    padding-top: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+.passwords > div
+{
+    min-width: 211px;
+    min-height: 50px;
+    padding: .525em 1em;
+    text-align: center;
+    border-radius: 5px;
+    background-color: hsl( var(--clr-light) /.4);
+}
+span 
+{
+    margin-left: 5px;
+    cursor: pointer;
+}
+.password-length-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+input[type="range"]
+{
+    margin: auto 0 ;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 12px;
+    border: 2px solid hsl(var(--clr-accent));
+    background-color: transparent;
+}
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+input[type="range"]::-webkit-slider-thumb 
+{
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 10px; 
+  height: 20px; 
+  background: transparent; 
+  background: hsl(var(--clr-dark));
+  border: 2px solid hsl(var(--clr-accent));
+  cursor: pointer;
+  border-radius: 2px; 
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 10px; /* Set a specific slider handle width */
+  height: 20px; 
+  background: hsl( var(--clr-dark) ); 
+  border: 2px solid hsl(var(--clr-accent));
+  cursor: pointer; 
+  border-radius: 2px;
+}
+input[type="range"]::-moz-range-progress,
+input[type="range"]::-webkit-slider-runnable-track
+{
+    background-color: hsl(var(--clr-accent));   
+    
+}
+
+@media (min-width:35em)
+{
+    .passwords
+    {
+        flex-direction: row;
+        justify-content: flex-start;
+    }  
+    .password-length-container
+    {
+        flex-direction: row;
+    }
+    input[type="range"]
+    {
+        width: 35%;
+    }
+}
+
+
+
+
+
+
+
